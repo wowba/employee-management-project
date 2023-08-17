@@ -4,9 +4,11 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/app.js',
+  entry: {
+    main: './src/index.js'
+  },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -22,11 +24,11 @@ module.exports = {
       overlay: true
     },
     hot: true,
-    watchFiles: ['src/*', 'index.html']
+    watchFiles: ['src/*', 'public/index.html', 'public/main.js']
   },
   plugins: [
     new CopyWebpackPlugin({
-      patterns: ['index.html']
+      patterns: ['public/index.html']
     }),
     new webpack.HotModuleReplacementPlugin()
   ]
