@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack && webpack-dev-server --mode development",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/wowba/employee-management-project/issues"
   },
-  "homepage": "https://github.com/wowba/employee-management-project#readme"
+  "homepage": "https://github.com/wowba/employee-management-project#readme",
+  "dependencies": {
+    "aws-amplify": "^5.3.8"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
 }
