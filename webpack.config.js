@@ -24,7 +24,7 @@ module.exports = {
       overlay: true
     },
     hot: true,
-    watchFiles: ['src/*', 'public/index.html', 'public/main.js']
+    watchFiles: ['src/*', 'public/index.html']
   },
   plugins: [
     new CopyWebpackPlugin({
