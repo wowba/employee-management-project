@@ -14,7 +14,6 @@ export const createUser = /* GraphQL */ `
       job
       position
       img
-      date
       createdAt
       updatedAt
       __typename
@@ -34,7 +33,6 @@ export const updateUser = /* GraphQL */ `
       job
       position
       img
-      date
       createdAt
       updatedAt
       __typename
@@ -54,7 +52,6 @@ export const deleteUser = /* GraphQL */ `
       job
       position
       img
-      date
       createdAt
       updatedAt
       __typename

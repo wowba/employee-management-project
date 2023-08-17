@@ -10,5 +10,4 @@ type User @model {
   job: String!
   position: String!
   img: String!
-  date: AWSTime!
 }

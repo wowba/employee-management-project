@@ -20,6 +20,12 @@
           "appId": "d4nuhen3ojb3s",
           "type": "manual"
         }
+      },
+      "auth": {
+        "emsa98dbd18": {}
+      },
+      "storage": {
+        "s34341a2a3": {}
       }
     }
   }

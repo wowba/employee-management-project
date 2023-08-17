@@ -4,6 +4,7 @@ node_module/
 node_modules
 
 dist
+test.js
 
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend

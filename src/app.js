@@ -1,10 +1,11 @@
 import Header from "./components/Header/Header"
+import Component from "./core/Component"
 
-export default class App {
+export default class App extends Component {
   constructor() {
-    this.el = document.createElement('div')
-
+    super()
     const header = new Header()
-    this.el.append(header.el)
+    const routerView = document.createElement('router-view')
+    this.el.append(header.el, routerView)
   }
 }

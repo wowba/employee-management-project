@@ -8,5 +8,8 @@ export default class CreateButton extends Component {
   }
   render() {
     this.el.innerText = "임직원 생성"
+    this.el.addEventListener("click", () => {
+      location.href = '#/create'
+    })
   }
 }

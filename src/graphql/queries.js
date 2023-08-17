@@ -11,7 +11,6 @@ export const getUser = /* GraphQL */ `
       job
       position
       img
-      date
       createdAt
       updatedAt
       __typename
@@ -33,7 +32,6 @@ export const listUsers = /* GraphQL */ `
         job
         position
         img
-        date
         createdAt
         updatedAt
         __typename
