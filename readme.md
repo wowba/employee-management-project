@@ -10,3 +10,8 @@ Table을 작성한 뒤 amplify push 를 통해 업데이트 적용.
 
 ## Webpack
 HMR 및 번들링을 통한 로딩 속도 단축
+
+## 개발 진행
+- 2023.08.17 
+  - AWS amplify 적용 및 개발환경 세팅 (웹팩 등)
+  - amplify를 이용한 User Table 생성 및 User CRUD API 생성
