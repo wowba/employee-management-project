@@ -5,6 +5,7 @@ import Employee from "./Employee"
 export default class EmployeeList extends Component {
   constructor() {
     super() 
+    this.el.classList.add("employee-list")
   }
   async render() {
     const data = await getEmployeeList() // data.data.listUsers.items = 데이터 배열

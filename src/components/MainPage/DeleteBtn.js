@@ -7,6 +7,7 @@ export default class DeleteBtn extends Component {
       tagName: "button",
       props: props
     })
+    this.el.classList.add("delete-button")
   }
   render() {
     this.el.innerText = "삭제"

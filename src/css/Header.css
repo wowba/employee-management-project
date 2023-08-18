@@ -1,2 +1,5 @@
-header {
+.header-title {
+  height: 3rem;
+  font-size: 3rem;
+  font-weight: 700;
 }

@@ -4,6 +4,7 @@ import { getEmployee, getImgUrl } from "../../api/api";
 export default class ImageContainer extends Component {
   constructor() {
     super()
+    this.el.classList.add("input-row")
   }
   async render() {
     const input = document.createElement("input")
@@ -12,6 +13,9 @@ export default class ImageContainer extends Component {
     input.id = "img"
     input.setAttribute("type", "file")
     input.setAttribute("accept", "image/*")
+
+    input.classList.add("fileinput")
+    preview.classList.add("preview")
 
     input.addEventListener('change', () => {
       const reader = new FileReader() 

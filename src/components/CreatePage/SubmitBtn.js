@@ -7,6 +7,7 @@ export default class SubmitBtn extends Component {
     super({
       tagName: "button"
     })
+    this.el.classList.add("submit-button")
   }
   render() {
     this.el.innerText = "등록"

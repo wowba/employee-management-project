@@ -8,13 +8,14 @@ export default class Employee extends Component {
     super({
       props: props
     })
+    this.el.classList.add("employee")
   }
   async render() {
     const s3ImgUrl = await getImgUrl(this.props.img)
 
     this.el.innerHTML = /* html */`
-      <img src="${s3ImgUrl}" />
-      <div>
+      <img class="employee--img" src="${s3ImgUrl}" />
+      <div class="employee--info">
         <span>${this.props.team}<span>
         <div>
           <span>${this.props.name}<span>

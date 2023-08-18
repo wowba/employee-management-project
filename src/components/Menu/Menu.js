@@ -3,14 +3,11 @@ import CreateBtn from "./CreateBtn"
 
 export default class Menu extends Component {
   constructor() {
-    super({
-      tagName: "div"
-    }) 
+    super() 
+    this.el.classList.add("buttonDiv")
   }
   render() {
-    const buttonDiv = document.createElement("div")
     const createBtn = new CreateBtn()
-    buttonDiv.append(createBtn.el)
-    this.el.append(buttonDiv)
+    this.el.append(createBtn.el)
   }
 }

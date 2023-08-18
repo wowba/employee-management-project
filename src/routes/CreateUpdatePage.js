@@ -6,16 +6,17 @@ import Component from "../core/Component"
 
 export default class CreateUpdatePage extends Component {
   async render() {
+    this.el.classList.add("create-update-page")
     this.el.innerHTML = /* html */`
-      <div>
+      <div class="input-row">
         <div>이름<input id="name"/></div>
         <div>이메일<input id="email"/></div>
       </div>
-      <div>
+      <div class="input-row">
         <div>부서<input id="team"/></div>
         <div>직급<input id="job"/></div>
       </div>
-      <div>
+      <div class="input-row">
         <div>직책<input id="position"/></div>
       </div>
     `
@@ -24,8 +25,8 @@ export default class CreateUpdatePage extends Component {
     const buttonDiv = document.createElement("div")
     const submitBtn = new SubmitBtn()
     const cancelBtn = new CancelBtn()
-    buttonDiv.append(imageContainer.el, submitBtn.el, cancelBtn.el)
-    this.el.append(buttonDiv)
+    buttonDiv.append(submitBtn.el, cancelBtn.el)
+    this.el.append(imageContainer.el, buttonDiv)
 
     // 수정일 경우 input에 데이터 입력
     const [hash, queryString = ''] = location.hash.split('?')

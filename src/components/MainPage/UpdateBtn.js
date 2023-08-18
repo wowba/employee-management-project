@@ -6,6 +6,7 @@ export default class UpdateBtn extends Component {
       tagName: "button",
       props: props
     })
+    this.el.classList.add("update-button")
   }
   render() {
     this.el.innerText = "수정"
