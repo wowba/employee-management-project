@@ -31,7 +31,12 @@ border-radius: 10px;
   border: 1px solid black;
   padding: 1rem 3rem;
   border-radius: 1rem;
+  transition: all 1s;
 }
+.employee:hover {
+  transform: scale(1.04);
+}
+
 .employee--img {
   width: 6rem;
   height: 6rem;
