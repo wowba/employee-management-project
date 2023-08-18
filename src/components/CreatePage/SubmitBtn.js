@@ -1,4 +1,4 @@
-import { createEmployee, uploadImg } from "../../api/api";
+import { createEmployee, updateEmployee, uploadImg } from "../../api/api";
 import Component from "../../core/Component";
 import validation from "../../util/validation";
 
@@ -26,11 +26,14 @@ export default class SubmitBtn extends Component {
         position: position,
         img: img
       }
-
+      const [hash, queryString = ''] = location.hash.split('?')
       if(validation(data)) {
         const imgKey = await uploadImg()
         data.img = imgKey
-        await createEmployee(data)        
+                
+        if (hash === "#/create") await createEmployee(data)
+        if (hash === "#/update") await updateEmployee(data)
+
         window.location = "#/"
       } else {
         alert("빈칸을 입력해 주세요.")        

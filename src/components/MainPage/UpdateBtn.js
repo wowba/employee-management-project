@@ -1,12 +1,16 @@
 import Component from "../../core/Component"
 
 export default class UpdateBtn extends Component {
-  constructor() {
+  constructor(props) {
     super({
-      tagName: "button"
+      tagName: "button",
+      props: props
     })
   }
   render() {
     this.el.innerText = "수정"
+    this.el.addEventListener("click", () => {
+      location.href = `#/update?id=${this.props}`
+    })
   }
 } 

@@ -10,13 +10,9 @@ export default class Employee extends Component {
     })
   }
   async render() {
-    const s3ImgUrl = await getImgUrl(this.props.img )
-    console.log(s3ImgUrl)
+    const s3ImgUrl = await getImgUrl(this.props.img)
 
     this.el.innerHTML = /* html */`
-      <div>
-        <input type="checkbox"/>
-      <div>
       <img src="${s3ImgUrl}" />
       <div>
         <span>${this.props.team}<span>

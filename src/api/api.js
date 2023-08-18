@@ -1,12 +1,13 @@
 import { Amplify, Storage, API, graphqlOperation } from "aws-amplify";
 
 import awsconfig from "../aws-exports.js";
-import { createUser, deleteUser } from "../graphql/mutations.js";
-import { listUsers } from "../graphql/queries.js";
+import { createUser, deleteUser, updateUser } from "../graphql/mutations.js";
+import { getUser, listUsers } from "../graphql/queries.js";
 
 Amplify.configure(awsconfig);
 
-export { uploadImg, getImgUrl, createEmployee, getEmployees, deleteEmployee }
+export { uploadImg, getImgUrl, createEmployee, 
+  getEmployee, getEmployeeList, deleteEmployee, updateEmployee }
 
 const uploadImg = async () => {
   const img = document.getElementById("img").files[0]
@@ -23,7 +24,6 @@ const uploadImg = async () => {
 }
 
 const getImgUrl = async (key) => {
-  console.log(key)
   return await Storage.get(key)
 }
 
@@ -40,8 +40,28 @@ const createEmployee = async (data) => {
   return await API.graphql(graphqlOperation(createUser, { input: info }))
 }
 
-const getEmployees = async () => {
+const getEmployee = async (id) => {
+  return await API.graphql(graphqlOperation(getUser, { id: id }))
+}
+
+const getEmployeeList = async () => {
   return await API.graphql(graphqlOperation(listUsers))
+}
+
+const updateEmployee = async (data) => {
+  const [hash, queryString = ''] = location.hash.split('?')
+  const id = queryString.split("=")[1]
+  const {name, email, team, job, position, img} = data
+  const info = {
+    id: id,
+    name: name,
+    email: email,
+    team: team,
+    job: job,
+    position: position,
+    img: img,
+  }
+  return await API.graphql(graphqlOperation(updateUser, { input: info }))
 }
 
 const deleteEmployee = async (id) => {
