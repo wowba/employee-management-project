@@ -28,8 +28,8 @@ export default class SubmitBtn extends Component {
       }
 
       if(validation(data)) {
-        const imgUrl = await uploadImg()
-        data.img = imgUrl
+        const imgKey = await uploadImg()
+        data.img = imgKey
         await createEmployee(data)        
         window.location = "#/"
       } else {
